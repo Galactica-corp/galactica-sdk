@@ -1,8 +1,10 @@
 import { ImportZkCertError, importZkCert } from "./api/import-zk-cert";
+import { sdkConfig } from "./config";
 
 const clientExample = async () => {
   try {
-    const response = await importZkCert({ zkCert: { example: 5 } });
+    // @ts-ignore
+    const response = await importZkCert({ zkCert: { holderCommitment: "" } });
     console.log(response.gip69);
   } catch (error) {
     if (error instanceof ImportZkCertError) {
